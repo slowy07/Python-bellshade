@@ -1,9 +1,12 @@
 import json
+import os
+from typing import Any
 
 import requests
+import subprocesss
 
 
-def get_random_quote():
+def get_random_quote() -> dict[str, Any]:
     # Fungsi ini akan mengambil quote secara random dari API Quotable
     # dan mengembalikan quote yang diambil.
     #
@@ -15,13 +18,11 @@ def get_random_quote():
     return quote
 
 
-def main():
-    import os
-
+def main() -> None:
     quote = get_random_quote()
 
     # clear screen
-    os.system("cls" if os.name == "nt" else "clear")
+    subprocesss.run("cls" if os.name == "nt" else "clear", shell=True)
     print(f"\n\n{quote['content']} - {quote['author']}")
 
     if input("\n\nKetik 'y' untuk coba lagi: ") == "y":

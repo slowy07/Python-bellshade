@@ -22,3 +22,9 @@ def sum_geometric_progression(
     # rumus untuk menemukan hasil dari suku ke n dari
     # geometric progression
     return (ist_pertama / (1 - rasio_umum)) * (1 - rasio_umum**ist_bilangan)
+
+
+if __name__ == "__main__":
+    import doctest
+
+    doctest.testmod()

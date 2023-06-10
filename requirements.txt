@@ -10,10 +10,13 @@ pillow
 projectq
 qiskit
 requests
+rich
 scikit-fuzzy
 scikit-learn
 statsmodels
 sympy
 tensorflow
+texttable
 types-requests
 xgboost
+yulewalker

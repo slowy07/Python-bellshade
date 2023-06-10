@@ -8,7 +8,7 @@
 # kemudian data yang lebih besar dibandingkan dengand data 3
 
 
-def bubble_sort(collection):
+def bubble_sort(collection: list[int]) -> list[int]:
     """
     contoh
     >>> bubble_sort([0, 5, 2, 3, 2])

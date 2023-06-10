@@ -1,4 +1,4 @@
-def hex_to_rgb(hex_color):
+def hex_to_rgb(hex_color: str) -> list[int, int, int]:
     """
     Fungsi ini menerima inputan berupa string hexadecimal
     dan mengembalikan hasilnya dalam bentuk tuple (r, g, b).
@@ -42,7 +42,7 @@ def hex_to_rgb(hex_color):
     return tuple(int(hex_string[i : i + 2], 16) for i in (0, 2, 4))
 
 
-def main(args=None):
+def main(args: None = None) -> None:
     import doctest
 
     doctest.testmod()

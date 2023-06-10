@@ -38,43 +38,44 @@ class Point:
     ValueError: could not convert string to float: 'pi'
     """
 
-    def __init__(self, x, y):
-        self.x, self.y = float(x), float(y)
+    def __init__(self, x: float or int, y: float or int):
+        self.x: float = float(x)
+        self.y: float = float(y)
 
-    def __eq__(self, other):
+    def __eq__(self, other: "Point") -> bool:
         return self.x == other.x and self.y == other.y
 
-    def __ne__(self, other):
+    def __ne__(self, other: "Point") -> bool:
         return not self == other
 
-    def __gt__(self, other):
+    def __gt__(self, other: "Point") -> bool:
         if self.x > other.x:
             return True
         elif self.x == other.x:
             return self.y > other.y
         return False
 
-    def __lt__(self, other):
+    def __lt__(self, other: "Point") -> bool:
         return not self > other
 
-    def __ge__(self, other):
+    def __ge__(self, other: "Point") -> bool:
         if self.x > other.x:
             return True
         elif self.x == other.x:
             return self.y >= other.y
         return False
 
-    def __le__(self, other):
+    def __le__(self, other: "Point") -> bool:
         if self.x < other.x:
             return True
         elif self.x == other.x:
             return self.y <= other.y
         return False
 
-    def __repr__(self):
+    def __repr__(self) -> str:
         return f"({self.x}, {self.y})"
 
-    def __hash__(self):
+    def __hash__(self) -> int:
         return hash(self.x)
 
 
