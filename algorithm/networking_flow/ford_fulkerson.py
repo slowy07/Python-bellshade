@@ -13,7 +13,7 @@
 # - problem pencocokan bipartit
 
 
-def bfs(graph: list[list[int]], s: int, t: int, parent: list[int]) -> bool:
+def bfs(graph, s, t, parent) -> bool:
     visited = [False] * len(graph)
     queue = []
     queue.append(s)
@@ -27,10 +27,10 @@ def bfs(graph: list[list[int]], s: int, t: int, parent: list[int]) -> bool:
                 visited[ind] = True
                 parent[ind] = u
 
-    return bool(visited[t])
+    return True if visited[t] else False
 
 
-def ford_fulkerson(graph: list[list[int]], source: int, sink: int) -> int:
+def FordFulkerson(graph, source, sink):
     """
     >>> graph =  [
     ... [0, 16, 13, 0, 0, 0],
@@ -80,6 +80,6 @@ if __name__ == "__main__":
     ]
 
     source, sink = 0, 5
-    print(ford_fulkerson(graph, source, sink))
+    print(FordFulkerson(graph, source, sink))
 
     doctest.testmod()

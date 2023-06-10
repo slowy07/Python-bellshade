@@ -7,19 +7,19 @@ dalam array baru.
 """
 
 
-def pop_sort(arr: list[int]) -> list[int]:
+def pop_sort(arr):
     # Inisialisasi data
-    arr_a = arr
-    arr_b = []
-    arr_c = []
-    print("Data sebelum disort:", arr_a, end="\n\n")
+    arrA = arr
+    arrB = []
+    arrC = []
+    print("Data sebelum disort:", arrA, end="\n\n")
 
     # Kita loop hingga data di $a kosong
-    while len(arr_a) > 0:
+    while len(arrA) > 0:
         # Keluarkan nilai paling atas dari array $a
-        top = arr_a.pop()
+        top = arrA.pop()
         print("Data yang diambil:", top)
-        print("Array A:", arr_a)
+        print("Array A:", arrA)
 
         # Apabila array B ada isinya dan isi paling atas dari array B
         # lebih kecil dari array A, kita pindahkan semua nilai-nilai yang
@@ -31,22 +31,22 @@ def pop_sort(arr: list[int]) -> list[int]:
         # Catatan:
         # Kita harus menghitung isi array terlebih dahulu sebelum mengambil
         # data array lebih utama agar menghindari error "Undefined index"
-        while len(arr_b) > 0 and top > arr_b[len(arr_b) - 1]:
-            arr_c.append(arr_b.pop())
+        while len(arrB) > 0 and top > arrB[len(arrB) - 1]:
+            arrC.append(arrB.pop())
 
         # Setelah aman, kita masukkan data dari $a ke $b
-        arr_b.append(top)
+        arrB.append(top)
 
-        print("Array B:", arr_b)
-        print("Array C:", arr_c)
+        print("Array B:", arrB)
+        print("Array C:", arrC)
 
         # Apabila isi $c ada, kita balikkan lagi ke $b secara berurutan.
-        while len(arr_c) > 0:
-            arr_b.append(arr_c.pop())
+        while len(arrC) > 0:
+            arrB.append(arrC.pop())
 
-        print("Hasil sementara:", arr_b, end="\n\n")
+        print("Hasil sementara:", arrB, end="\n\n")
 
-    print("Data setelah disort:", arr_b)
+    print("Data setelah disort:", arrB)
 
 
 if __name__ == "__main__":

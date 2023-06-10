@@ -9,7 +9,7 @@
 # time complexity: O(n * log n)
 
 
-def euclidan_distance_sqr(point1: list[int], point2: list[int]) -> int:
+def euclidan_distance_sqr(point1, point2):
     """
     >>> euclidan_distance_sqr([1, 2], [2, 4])
     5
@@ -17,7 +17,7 @@ def euclidan_distance_sqr(point1: list[int], point2: list[int]) -> int:
     return (point1[0] - point2[0]) ** 2 + (point1[1] - point2[1]) ** 2
 
 
-def column_based_sort(array: list[tuple[int, int]], column: int) -> list[tuple]:
+def column_based_sort(array, column) -> list[tuple]:
     """
     >>> column_based_sort([(5, 1), (4, 2), (3, 0)], 1)
     [(3, 0), (5, 1), (4, 2)]
@@ -25,9 +25,7 @@ def column_based_sort(array: list[tuple[int, int]], column: int) -> list[tuple]:
     return sorted(array, key=lambda x: x[column])
 
 
-def dis_between_closest_pair(
-    points: list[tuple[int, int]], point_count: int, min_dis=float("inf")
-) -> float:
+def dis_between_closest_pair(points, point_count, min_dis=float("inf")) -> float:
     """
     pendekatan brute force untuk menemukan
     jarak antara titik pasangan terdekat
@@ -44,9 +42,7 @@ def dis_between_closest_pair(
     return min_dis
 
 
-def dis_between_closest_in_strip(
-    points: list[tuple[int, int]], point_count: int, min_dis: float = float("inf")
-) -> float:
+def dis_between_closest_in_strip(points, point_count, min_dis=float("inf")):
     """
     pasangan titik terdekat dalam strip
     >>> points = [(1, 2), (2, 4), (5, 7), (8, 9), (11, 0)]
@@ -63,11 +59,7 @@ def dis_between_closest_in_strip(
     return min_dis
 
 
-def closest_pair_of_points_sqr(
-    points_sorted_on_x: list[tuple[int, int]],
-    points_sorted_on_y: list[tuple[int, int]],
-    point_count: int,
-) -> float:
+def closest_pair_of_points_sqr(points_sorted_on_x, points_sorted_on_y, point_count):
     """
     >>> points = [(1, 2), (3, 4)]
     >>> points2 = [(5,6), (7,8)]
@@ -100,7 +92,7 @@ def closest_pair_of_points_sqr(
     return min(closest_pair_dis, closest_in_strip)
 
 
-def closest_pair_of_points(points: list[tuple[int, int]], length_points: int) -> float:
+def closest_pair_of_points(points, length_points) -> float:
     """
     >>> point1 = [(2, 3), (12, 30)]
     >>> length_points = len([(2, 3), (12, 30)])
@@ -118,9 +110,5 @@ def closest_pair_of_points(points: list[tuple[int, int]], length_points: int) ->
 
 if __name__ == "__main__":
     import doctest
-
-    point1 = [(2, 3), (12, 30)]
-    length_points = len(point1)
-    assert closest_pair_of_points(point1, length_points) == 28.792360097775937
 
     doctest.testmod()

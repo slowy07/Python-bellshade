@@ -11,12 +11,10 @@
 # referensi
 # https://en.wikipedia.org/wiki/Softmax_function
 
-from typing import Union
-
 import numpy as np
 
 
-def softmax(vector: Union[np.ndarray, list, tuple]) -> np.ndarray:
+def softmax(vector):
     """
     Menerapkan fungsi softmax
     Parameter:
